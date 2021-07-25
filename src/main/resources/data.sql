@@ -9,10 +9,9 @@ CREATE TABLE PLAYER (
 );
 
   commit;
-INSERT INTO PLAYER (player_Id, player_Name, player_Age,email_Id,total_Score) VALUES
-  (99, 'TEST', 12,'TESTRAJ@raj.com',10);
 
 
+DROP TABLE IF EXISTS TOKEN ;
   commit;
 CREATE TABLE TOKEN (
   token_Id INT   PRIMARY KEY,
@@ -21,8 +20,6 @@ CREATE TABLE TOKEN (
   generate_Time_Stamp VARCHAR(250) 
 );
 
-INSERT INTO TOKEN (token_Id, access_Token, player_ID,generate_Time_Stamp) VALUES
-  (11,'TEST', 12,'232323');
   commit;
 
 DROP TABLE IF EXISTS SUBMISSION;
@@ -40,7 +37,19 @@ CREATE TABLE SUBMISSION (
 );
 
   commit;
-INSERT INTO SUBMISSION (submissionId, playerID, tokenId,accessToken,text,score,status,message) VALUES
-  (56565,12,'9999', 'TEST', 'TESET',30,'Success','Success submitted');
+
+
+
+
+
+CREATE SEQUENCE PLAYER_SEQUENCE_ID START WITH (select max( PLAYER_ID) + 1 from PLAYER);
+
+  commit;
+
+CREATE SEQUENCE TOKEN_SEQUENCE_ID START WITH (select max(TOKEN_ID) + 1 from TOKEN);
+
+  commit;
+
+CREATE SEQUENCE SUBMISSION_SEQUENCE_ID START WITH (select max(SUBMISSION_ID) + 1 from SUBMISSION);
 
   commit;
