@@ -1,6 +1,13 @@
 FROM openjdk:8-jdk-alpine
-LABEL maintainer="author@javatodev.com"
-VOLUME /main-app
-ADD build/libs/spring-boot-mysql-base-project-0.0.1-SNAPSHOT.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar","/app.jar"]
+RUN addgroup -S spring && adduser -S spring -G spring
+USER spring:spring
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+# Copy the project source
+USER root
+RUN mkdir -p /upload-dir
+RUN chown spring:spring /upload-dir
+COPY upload-dir/demodb.mv.db /upload-dir/demodb.mv.db
+COPY upload-dir/demodb.trace.db /upload-dir/demodb.trace.db
+USER spring
+ENTRYPOINT ["java","-jar","/app.jar"]
