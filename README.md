@@ -54,6 +54,7 @@ Output
 
 2) get Player 
 
+![image](https://user-images.githubusercontent.com/17102344/126900468-ec1ce5b5-805a-4b7b-974b-af8adaaf3b8e.png)
 
 Get Request 
 
@@ -83,6 +84,7 @@ Output
 
 
 3) Generate Token 
+![image](https://user-images.githubusercontent.com/17102344/126900473-c35b87dc-476c-4a5b-b758-4c351f35a884.png)
 
 Post Request 
 http://localhost:5003/LeaderBoard/token/GenerateToken/ 
@@ -122,6 +124,7 @@ Output
 
 4) Get Token for a player :
 
+![image](https://user-images.githubusercontent.com/17102344/126900479-71e25bab-a32c-4504-af60-a560fa84723c.png)
 
 Post request 
 
@@ -161,6 +164,7 @@ Output
 5) Submit Text 
 
 
+![image](https://user-images.githubusercontent.com/17102344/126900485-46ec9194-2d57-47ec-be76-108fce46eccf.png)
 
 
 http://localhost:5003/LeaderBoard/submission/SaveSubmission/ 
@@ -197,6 +201,7 @@ Output
 
 6) Get Submission by Player
 
+![image](https://user-images.githubusercontent.com/17102344/126900497-bf438afe-3c37-4af5-aa9f-b83e52dfb1cf.png)
 
 http://localhost:5003/LeaderBoard/submission/getSubmissionByPlayer/ 
 
@@ -295,6 +300,7 @@ Output :
 
 7) Get Top 10 Submussion
 
+![image](https://user-images.githubusercontent.com/17102344/126900504-a0cd0f31-1e63-4572-ad24-53958bb11502.png)
 
 
 Post request 
